@@ -1,0 +1,8 @@
+import fitz  # PyMuPDF
+doc = fitz.open("Sign Here.pdf")
+pno = 0
+rect = (60, 60, 180, 180)
+imgpath = "Sign.png"
+page = doc[pno]
+page.insert_image(rect, filename=imgpath)
+doc.ez_save("Signed.pdf") 
